@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href='/staticFiles/style.css' />
+  <script>
+    alert("Page has been loaded successfully")
+  </script>
+ 
+  </head>
+  <body>
+    <h1>Basic Flask Calculator </h1>
+    <p>Create a minimal Flask web application that functions as a basic calculator.</p>
+    <form method = 'POST'>
+        <label>Input your first number:</label>
+        <input type="text" id="num_1" name="num_1"><br><br>
+        <label>Input your Second number:</label>
+        <input type="text" id="num_2" name="num_2"><br><br>
+        <label for="cars">Choose a car:</label>
+
+        <select name="operations" id="operations", name='operations'>
+            <option value='select'> Select operation sign</option>
+            <option value="+">Addition</option>
+            <option value="-">Subtraction</option>
+            <option value="*">Multiplication</option>
+            <option value="/">Division</option>
+        </select>
+        <button type="submit">Calculate</button><br><br>
+        {% if display_result %}
+            <label>Display Result:</label>
+            {{ display_result }}
+        {% endif %}
+        {% if error_msg %}
+            <label>Error Message:</label>
+            {{ error_msg }}
+        {% endif %}
+    </form>
+  </body>
+</html>
