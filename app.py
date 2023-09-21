@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
 
-# app = Flask(__name__)
+# app = Flask(__name__, static_url_path='/static', static_folder='static')
+#  app = Flask(__name__, template_folder='templates', static_folder='staticFiles')
 
-app = Flask(__name__, template_folder='templates', static_folder='staticFiles')
+app = Flask(__name__) 
 
 @app.route("/", methods=['GET', 'POST'])
 def basic_calc():
